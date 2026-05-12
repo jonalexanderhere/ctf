@@ -1054,7 +1054,7 @@ export function subscribeToSolves(onSolve: (payload: { username: string, challen
             .maybeSingle();
           if (latestError || !latestSolve || !latestSolve.user_id || !latestSolve.challenge_id) {
             console.warn('[subscribeToSolves] Still cannot get user_id or challenge_id from latest solve:', latestError, latestSolve)
-            onSolve({ username: 'Unknown', challenge: 'Unknown' });
+            onSolve({ username: 'Unknown', challenge: 'Unknown', isFirstBlood: false });
             return;
           }
           solve = latestSolve;
@@ -1068,7 +1068,7 @@ export function subscribeToSolves(onSolve: (payload: { username: string, challen
 
         if (error) {
           console.warn('[subscribeToSolves] Error fetching solve info via RPC:', error);
-          onSolve({ username: 'Unknown', challenge: 'Unknown' });
+          onSolve({ username: 'Unknown', challenge: 'Unknown', isFirstBlood: false });
           return;
         }
 
