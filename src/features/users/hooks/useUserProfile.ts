@@ -134,7 +134,7 @@ export function useUserProfile(userId: string | null, isCurrentUser: boolean) {
       }
     }
     fetchDetail()
-  }, [userId, effectiveSelectedEventId, effectiveSelectedEventMode])
+  }, [userId, effectiveSelectedEventId, effectiveSelectedEventMode, initialLoading])
 
   const refreshUserDetail = async () => {
     if (!userId) return

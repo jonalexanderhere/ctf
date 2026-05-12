@@ -9,7 +9,7 @@ interface BrandLogoProps {
 }
 
 // Langsung export default di depan function
-export default ({ name = "", className }: BrandLogoProps) => {
+const BrandLogo = ({ name = "", className }: BrandLogoProps) => {
     const isPhoenix = name.toUpperCase().includes("PHOENIX");
 
     if (isPhoenix) {
@@ -31,3 +31,7 @@ export default ({ name = "", className }: BrandLogoProps) => {
         </span>
     );
 };
+
+BrandLogo.displayName = 'BrandLogo';
+
+export default BrandLogo;

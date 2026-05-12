@@ -60,7 +60,7 @@ export default function Home() {
   const { user, loading } = require("@/shared/contexts").useAuth();
 
   if (loading) {
-    return <Loader fullscreen color="text-blue-500" />
+    return <Loader fullscreen color="text-orange-500" />
   }
 
   return (

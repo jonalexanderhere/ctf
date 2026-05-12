@@ -14,9 +14,9 @@ const Footer: React.FC = () => {
           {/* KOLOM KIRI: Brand & Build */}
           <div className="flex flex-col items-center md:items-start space-y-2 overflow-hidden">
             <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+              <Shield className="w-5 h-5 text-orange-600 dark:text-orange-400 flex-shrink-0" />
               <span className="text-lg font-black tracking-tighter text-gray-900 dark:text-white uppercase leading-none">
-                {APP.shortName}<span className="text-blue-600"></span>
+                {APP.shortName}<span className="text-orange-600"></span>
               </span>
             </div>
 
@@ -54,10 +54,10 @@ const Footer: React.FC = () => {
             <a
               href={APP.nxctf.nxctf_github_org}
               target="_blank"
-              className="flex items-center gap-3 pl-3 pr-4 py-3 rounded-xl bg-white/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 hover:border-blue-500 transition-all group shadow-sm"
+              className="flex items-center gap-3 pl-3 pr-4 py-3 rounded-xl bg-white/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 hover:border-orange-500 transition-all group shadow-sm"
               title="Organization"
             >
-              <div className="p-1 rounded-lg bg-blue-500/10 text-blue-600 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+              <div className="p-1 rounded-lg bg-orange-500/10 text-orange-600 group-hover:bg-orange-500 group-hover:text-white transition-colors">
                 <Github size={18} />
               </div>
               <div className="flex flex-col items-start leading-none">
@@ -70,14 +70,14 @@ const Footer: React.FC = () => {
             <a
               href={APP.nxctf.nxctf_author}
               target="_blank"
-              className="flex items-center gap-3 pl-3 pr-4 py-3 rounded-xl bg-white/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 hover:border-blue-500 transition-all group shadow-sm"
+              className="flex items-center gap-3 pl-3 pr-4 py-3 rounded-xl bg-white/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 hover:border-orange-500 transition-all group shadow-sm"
             >
-              <div className="p-1 rounded-lg bg-blue-500/10 text-blue-600 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+              <div className="p-1 rounded-lg bg-orange-500/10 text-orange-600 group-hover:bg-orange-500 group-hover:text-white transition-colors">
                 <Code2 size={16} />
               </div>
               <div className="flex flex-col items-start leading-none">
                 <span className="text-[9px] font-bold text-gray-400 uppercase tracking-tighter">Creator</span>
-                <span className="text-xs font-black text-gray-900 dark:text-white group-hover:text-blue-500 transition-colors">Aria Fatah</span>
+                <span className="text-xs font-black text-gray-900 dark:text-white group-hover:text-orange-500 transition-colors">Aria Fatah</span>
               </div>
             </a>
           </div>

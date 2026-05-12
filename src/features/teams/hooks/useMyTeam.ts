@@ -57,7 +57,7 @@ export function useMyTeam(user: any, effectiveSelectedEvent: string | number) {
   useEffect(() => {
     if (!user) return
     loadTeamData()
-  }, [user, effectiveSelectedEvent])
+  }, [user, effectiveSelectedEvent, team])
 
   const currentMember = useMemo(() => members.find(m => m.user_id === user?.id), [members, user])
   const isCaptain = currentMember?.role === 'captain'
