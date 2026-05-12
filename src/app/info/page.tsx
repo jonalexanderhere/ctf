@@ -79,13 +79,13 @@ export default function InfoPage() {
     }
   }, [])
 
-  if (loading) return <Loader fullscreen color="text-orange-500" />;
+  if (loading) return <Loader fullscreen color="text-blue-500" />;
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#fafafa] dark:bg-[#09090b] text-gray-900 dark:text-gray-100 selection:bg-orange-500/30 overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-[#fafafa] dark:bg-[#09090b] text-gray-900 dark:text-gray-100 selection:bg-blue-500/30 overflow-hidden">
       {/* Background Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-orange-600/10 blur-[120px] animate-pulse" />
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600/10 blur-[120px] animate-pulse" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-red-600/10 blur-[120px] animate-pulse" />
       </div>
 
@@ -153,8 +153,8 @@ export default function InfoPage() {
             {repoStats && (
               <>
                 <div className="flex items-center gap-4">
-                  <div className="p-2.5 bg-orange-100 dark:bg-orange-500/10 rounded-xl">
-                    <Star className="text-orange-600 dark:text-orange-400 w-5 h-5" />
+                  <div className="p-2.5 bg-blue-100 dark:bg-blue-500/10 rounded-xl">
+                    <Star className="text-blue-600 dark:text-blue-400 w-5 h-5" />
                   </div>
                   <div className="text-left">
                     <div className="text-xl font-bold text-gray-900 dark:text-white leading-tight">{repoStats.stars}</div>
@@ -163,8 +163,8 @@ export default function InfoPage() {
                 </div>
                 <div className="h-10 w-px bg-gray-200 dark:bg-gray-800 hidden sm:block"></div>
                 <div className="flex items-center gap-4">
-                  <div className="p-2.5 bg-orange-100 dark:bg-orange-500/10 rounded-xl">
-                    <GitBranch className="text-orange-600 dark:text-orange-400 w-5 h-5" />
+                  <div className="p-2.5 bg-blue-100 dark:bg-blue-500/10 rounded-xl">
+                    <GitBranch className="text-blue-600 dark:text-blue-400 w-5 h-5" />
                   </div>
                   <div className="text-left">
                     <div className="text-xl font-bold text-gray-900 dark:text-white leading-tight">{repoStats.forks}</div>
@@ -175,8 +175,8 @@ export default function InfoPage() {
               </>
             )}
             <div className="flex items-center gap-4">
-              <div className="p-2.5 bg-orange-100 dark:bg-orange-500/10 rounded-xl">
-                <Users className="text-orange-600 dark:text-orange-400 w-5 h-5" />
+              <div className="p-2.5 bg-blue-100 dark:bg-blue-500/10 rounded-xl">
+                <Users className="text-blue-600 dark:text-blue-400 w-5 h-5" />
               </div>
               <div className="text-left">
                 <div className="text-xl font-bold text-gray-900 dark:text-white leading-tight">{CONTRIBUTORS.length}</div>
@@ -191,21 +191,21 @@ export default function InfoPage() {
           {/* Bottom: Technical Details */}
           <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 sm:gap-x-8 pt-4 text-sm font-mono text-gray-500 dark:text-gray-400">
             <div className="flex items-center gap-2">
-              <Info size={16} className="text-orange-500" />
+              <Info size={16} className="text-blue-500" />
               <span className="font-medium text-gray-700 dark:text-gray-300">v{VERSION}</span>
             </div>
 
             <div className="flex items-center gap-2">
-              <Clock size={16} className="text-orange-500" />
+              <Clock size={16} className="text-blue-500" />
               <span>{BUILD_TIME}</span>
             </div>
 
-            <a href={`${APP.nxctf.nxctf_github}/blob/main/LICENSE` || "https://www.apache.org/licenses/LICENSE-2.0"} target="_blank" rel="noopener" className="flex items-center gap-1.5 hover:text-orange-600 dark:hover:text-orange-400 transition-colors group">
-              <ScrollText size={16} className="group-hover:text-orange-500 transition-colors" /> Apache 2.0
+            <a href={`${APP.nxctf.nxctf_github}/blob/main/LICENSE` || "https://www.apache.org/licenses/LICENSE-2.0"} target="_blank" rel="noopener" className="flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group">
+              <ScrollText size={16} className="group-hover:text-blue-500 transition-colors" /> Apache 2.0
             </a>
 
-            <a href={`${APP.nxctf.nxctf_github}/blob/main/CHANGELOG.md` || '#'} target="_blank" rel="noopener" className="flex items-center gap-1.5 hover:text-orange-600 dark:hover:text-orange-400 transition-colors group">
-              <ListOrdered size={16} className="group-hover:text-orange-500 transition-colors" /> Changelog
+            <a href={`${APP.nxctf.nxctf_github}/blob/main/CHANGELOG.md` || '#'} target="_blank" rel="noopener" className="flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group">
+              <ListOrdered size={16} className="group-hover:text-blue-500 transition-colors" /> Changelog
             </a>
           </div>
         </motion.div>
@@ -228,10 +228,10 @@ export default function InfoPage() {
                 rel="noopener"
                 className="group flex flex-col items-center justify-center p-6 transition-all duration-300 bg-white/60 dark:bg-[#111622]/60 border border-gray-200 dark:border-gray-800 rounded-2xl backdrop-blur-xl hover:bg-white dark:hover:bg-[#151a28] hover:-translate-y-1 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:hover:shadow-[0_8px_30px_rgba(249,115,22,0.05)]"
               >
-                <div className="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 group-hover:text-orange-500 group-hover:bg-orange-50 dark:group-hover:bg-orange-500/10 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                <div className="mb-3 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 group-hover:text-blue-500 group-hover:bg-blue-50 dark:group-hover:bg-blue-500/10 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                   <Icon className="w-6 h-6" />
                 </div>
-                <span className="font-semibold text-gray-900 dark:text-white group-hover:text-orange-500 transition-colors">
+                <span className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-500 transition-colors">
                   {link.name}
                 </span>
               </a>
@@ -248,7 +248,7 @@ export default function InfoPage() {
         >
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center justify-center gap-2">
-              <Users size={24} className="text-orange-500" /> Built by the Community
+              <Users size={24} className="text-blue-500" /> Built by the Community
             </h2>
           </div>
 
@@ -271,7 +271,7 @@ export default function InfoPage() {
                       className="flex items-center gap-3 shrink-0 group px-4 py-2 mx-2 rounded-full bg-white/60 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700/50 backdrop-blur-md hover:bg-white dark:hover:bg-gray-800 hover:border-blue-500/50 hover:shadow-sm transition-all"
                     >
                       <ProfileAvatar username={username} />
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-orange-500 transition-colors">
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-blue-500 transition-colors">
                         {username}
                       </span>
                     </a>
@@ -294,7 +294,7 @@ export default function InfoPage() {
                       className="flex items-center gap-3 shrink-0 group px-4 py-2 mx-2 rounded-full bg-white/60 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700/50 backdrop-blur-md hover:bg-white dark:hover:bg-gray-800 hover:border-blue-500/50 hover:shadow-sm transition-all"
                     >
                       <ProfileAvatar username={username} />
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-orange-500 transition-colors">
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-blue-500 transition-colors">
                         {username}
                       </span>
                     </a>

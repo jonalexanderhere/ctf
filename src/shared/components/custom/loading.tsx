@@ -4,7 +4,7 @@ import React from "react"
 
 export default function Loader({
   size = 48,
-  color = "text-orange-500",
+  color = "text-blue-500",
   fullscreen = false,
 }) {
   const containerClass = fullscreen

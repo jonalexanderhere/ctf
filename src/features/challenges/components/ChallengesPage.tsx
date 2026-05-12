@@ -11,14 +11,14 @@ import ChallengesTabPanel from './challenges-page/ChallengesTabPanel'
 export default function ChallengesPage() {
   const data = useChallengesPageData()
 
-  if (data.loading) return <Loader fullscreen color="text-orange-500" />
+  if (data.loading) return <Loader fullscreen color="text-blue-500" />
   if (!data.user) return null
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#fafafa] dark:bg-[#0b0f19] text-gray-900 dark:text-gray-100 selection:bg-orange-500/30 overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-[#fafafa] dark:bg-[#0b0f19] text-gray-900 dark:text-gray-100 selection:bg-blue-500/30 overflow-hidden">
       {/* Background Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-orange-500/5 blur-[120px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-500/5 blur-[120px]" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-600/5 blur-[120px]" />
       </div>
 

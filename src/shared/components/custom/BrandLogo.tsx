@@ -18,7 +18,7 @@ const BrandLogo = ({ name = "", className }: BrandLogoProps) => {
                 <span className="text-gray-900 dark:text-white transition-colors">
                     PHOENIX
                 </span>
-                <span className="text-orange-600 dark:text-orange-500 drop-shadow-[0_0_15px_rgba(249,115,22,0.5)] ml-1">
+                <span className="text-blue-600 dark:text-blue-500 drop-shadow-[0_0_15px_rgba(249,115,22,0.5)] ml-1">
                     ARENA
                 </span>
             </span>
@@ -26,7 +26,7 @@ const BrandLogo = ({ name = "", className }: BrandLogoProps) => {
     }
 
     return (
-        <span className={cn("text-orange-600 dark:text-orange-500 font-black tracking-tighter uppercase", className)}>
+        <span className={cn("text-blue-600 dark:text-blue-500 font-black tracking-tighter uppercase", className)}>
             {name}
         </span>
     );
