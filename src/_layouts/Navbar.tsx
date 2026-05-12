@@ -124,7 +124,7 @@ export default function Navbar() {
 
   useEffect(() => {
     if (notifOpen) setNotifOpen(false)
-  }, [pathname])
+  }, [pathname, notifOpen, setNotifOpen])
 
   if (loading) return null
 

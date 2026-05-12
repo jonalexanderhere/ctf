@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { getTeamScoreboard, getTopTeamProgressByNames, getTopTeamUniqueProgressByNames } from '@/shared/lib'
 import { buildScoreboard, getOrderedProgressSeries } from '@/features/scoreboard/lib'
 import { TeamScoreboardEntry, TeamProgressSeries } from '../types'
@@ -8,11 +8,11 @@ export function useTeamScoreboard(user: any, showTotalScore: boolean, selectedEv
   const [entries, setEntries] = useState<TeamScoreboardEntry[]>([])
   const [series, setSeries] = useState<TeamProgressSeries[]>([])
 
+  const initialLoadDone = useRef(false)
   useEffect(() => {
     if (!user) return
     const fetchData = async () => {
-      const isFirstLoad = entries.length === 0
-      if (isFirstLoad) setLoading(true)
+      if (!initialLoadDone.current) setLoading(true)
 
       const p_event_id = (selectedEvent === 'all' || selectedEvent === 'main') ? null : String(selectedEvent)
       const p_event_mode = selectedEvent === 'all' ? 'any' : selectedEvent === 'main' ? 'main' : 'event'
@@ -21,7 +21,7 @@ export function useTeamScoreboard(user: any, showTotalScore: boolean, selectedEv
       if (scoreboardError) {
         setEntries([])
         setSeries([])
-        if (isFirstLoad) setLoading(false)
+        if (!initialLoadDone.current) setLoading(false)
         return
       }
 
@@ -52,7 +52,10 @@ export function useTeamScoreboard(user: any, showTotalScore: boolean, selectedEv
 
       setSeries(getOrderedProgressSeries(result.topNames, progressData) as TeamProgressSeries[])
 
-      if (isFirstLoad) setLoading(false)
+      if (!initialLoadDone.current) {
+        setLoading(false)
+        initialLoadDone.current = true
+      }
     }
     fetchData()
   }, [user, showTotalScore, selectedEvent])

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { getTeamByName, getTeamChallengesByName } from '@/shared/lib'
 import { TeamInfo, TeamMember, TeamSummary, TeamChallenge } from '../types'
 
@@ -12,11 +12,11 @@ export function useTeamDetail(user: any, teamName: string, effectiveSelectedEven
   const [hasMainSolved, setHasMainSolved] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
 
+  const initialLoadDone = useRef(false)
   useEffect(() => {
     if (!user || !teamName) return
     const fetchData = async () => {
-      const isFirstLoad = team === null
-      if (isFirstLoad) setLoading(true)
+      if (!initialLoadDone.current) setLoading(true)
       setError(null)
 
       const p_event_id = (effectiveSelectedEvent === 'all' || effectiveSelectedEvent === 'main') ? null : String(effectiveSelectedEvent)
@@ -43,7 +43,10 @@ export function useTeamDetail(user: any, teamName: string, effectiveSelectedEven
       }
 
       setChallenges(challengesRes.challenges ?? [])
-      if (isFirstLoad) setLoading(false)
+      if (!initialLoadDone.current) {
+        setLoading(false)
+        initialLoadDone.current = true
+      }
     }
     fetchData()
   }, [user, teamName, effectiveSelectedEvent])

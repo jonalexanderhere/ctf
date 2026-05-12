@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import {
   getMyTeam,
   getMyTeamSummary,
@@ -26,7 +26,7 @@ export function useMyTeam(user: any, effectiveSelectedEvent: string | number) {
   const [status, setStatus] = useState<{ type: 'error' | 'success'; message: string } | null>(null)
   const [initialLoading, setInitialLoading] = useState(true)
 
-  const loadTeamData = async () => {
+  const loadTeamData = useCallback(async () => {
     if (!user) return
     const isFirstLoad = team === null
     if (isFirstLoad) setLoading(true)
@@ -52,12 +52,12 @@ export function useMyTeam(user: any, effectiveSelectedEvent: string | number) {
       setLoading(false)
       setInitialLoading(false)
     }
-  }
+  }, [user, effectiveSelectedEvent, team])
 
   useEffect(() => {
     if (!user) return
     loadTeamData()
-  }, [user, effectiveSelectedEvent, team])
+  }, [user, effectiveSelectedEvent, loadTeamData])
 
   const currentMember = useMemo(() => members.find(m => m.user_id === user?.id), [members, user])
   const isCaptain = currentMember?.role === 'captain'
