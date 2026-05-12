@@ -149,7 +149,7 @@ export default function Navbar() {
                   size={42}
                   className="rounded-full"
                 />
-                <span className={`text-[1.35rem] font-extrabold tracking-wide ${theme === 'dark' ? 'text-white' : 'text-gray-900'} transition-all duration-200 group-hover:text-blue-500 dark:group-hover:text-blue-400`}>{APP.shortName}</span>
+                <span className={`text-[1.35rem] font-extrabold tracking-wide ${theme === 'dark' ? 'text-white' : 'text-gray-900'} transition-all duration-200 group-hover:text-orange-500 dark:group-hover:text-orange-400`}>{APP.shortName}</span>
               </Link>
 
               {/* Desktop menu */}
@@ -157,7 +157,7 @@ export default function Navbar() {
                 {user && (
                   <Link
                     href="/challenges"
-                    className={`px-3 py-2 rounded-lg flex items-center gap-1 text-[15px] font-medium transition-all duration-150 ${theme === 'dark' ? 'text-gray-200 hover:text-blue-400 hover:bg-gray-800 focus:ring-2 focus:ring-blue-700' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50 focus:ring-2 focus:ring-blue-400'}`}
+                    className={`px-3 py-2 rounded-lg flex items-center gap-1 text-[15px] font-medium transition-all duration-150 ${theme === 'dark' ? 'text-gray-200 hover:text-orange-400 hover:bg-gray-800 focus:ring-2 focus:ring-orange-700' : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50 focus:ring-2 focus:ring-orange-400'}`}
                     data-tour="navbar-challenges"
                   >
                     <Flag size={18} className="mr-1" /> Challenges
@@ -221,7 +221,7 @@ export default function Navbar() {
                 {user && APP.teams.enabled && (
                   <Link
                     href="/teams"
-                    className={`px-3 py-2 rounded-lg flex items-center gap-1 text-[15px] font-medium transition-all duration-150 ${theme === 'dark' ? 'text-gray-200 hover:text-blue-400 hover:bg-gray-800 focus:ring-2 focus:ring-blue-700' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50 focus:ring-2 focus:ring-blue-400'}`}
+                    className={`px-3 py-2 rounded-lg flex items-center gap-1 text-[15px] font-medium transition-all duration-150 ${theme === 'dark' ? 'text-gray-200 hover:text-orange-400 hover:bg-gray-800 focus:ring-2 focus:ring-orange-700' : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50 focus:ring-2 focus:ring-orange-400'}`}
                   >
                     <Users size={18} className="mr-1" /> Teams
                   </Link>
@@ -325,7 +325,7 @@ export default function Navbar() {
                   <>
                     <Link
                       href="/login"
-                      className={`px-4 py-2 rounded-lg text-[15px] font-medium shadow transition-all duration-150 ${theme === 'dark' ? 'bg-blue-500 hover:bg-blue-600 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+                      className={`px-4 py-2 rounded-lg text-[15px] font-medium shadow transition-all duration-150 ${theme === 'dark' ? 'bg-orange-500 hover:bg-orange-600 text-white' : 'bg-orange-600 hover:bg-orange-700 text-white'}`}
                     >
                       Login
                     </Link>
@@ -397,7 +397,7 @@ export default function Navbar() {
                       }
                     }}
                   >
-                    <FileText size={22} className="text-blue-500" />
+                    <FileText size={22} className="text-orange-500" />
                   </button>
 
                   {logsUnreadCount > 0 && (
@@ -561,7 +561,7 @@ export default function Navbar() {
                 {!user && (
                   <Link
                     href="/preview"
-                    className={`px-3 py-2 rounded-lg flex items-center gap-1 text-[15px] font-medium transition-all duration-150 ${theme === 'dark' ? 'text-gray-200 hover:text-blue-400 hover:bg-gray-800 focus:ring-2 focus:ring-blue-700' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50 focus:ring-2 focus:ring-blue-400'}`}
+                    className={`px-3 py-2 rounded-lg flex items-center gap-1 text-[15px] font-medium transition-all duration-150 ${theme === 'dark' ? 'text-gray-200 hover:text-orange-400 hover:bg-gray-800 focus:ring-2 focus:ring-orange-700' : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50 focus:ring-2 focus:ring-orange-400'}`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <FileText size={18} className="mr-1" /> Preview
@@ -628,7 +628,7 @@ export default function Navbar() {
                   <>
                     <Link
                       href="/login"
-                      className={`flex px-3 py-2 rounded-lg text-[15px] font-medium shadow transition-all duration-150 ${theme === 'dark' ? 'bg-blue-500 hover:bg-blue-600 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+                      className={`flex px-3 py-2 rounded-lg text-[15px] font-medium shadow transition-all duration-150 ${theme === 'dark' ? 'bg-orange-500 hover:bg-orange-600 text-white' : 'bg-orange-600 hover:bg-orange-700 text-white'}`}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Login

@@ -1,5 +1,5 @@
-export const NXCTF = {
-  nxctf_title: 'NXCTF',
+export const PHOENIX_ARENA = {
+  nxctf_title: 'Phoenix Arena',
   nxctf_logo: 'https://raw.githubusercontent.com/nxctf/assets/refs/heads/main/logo/logo-no-bg.svg',
   nxctf_discord: 'https://discord.gg/5etKks6aQQ',
   nxctf_donation: 'https://saweria.co/ariafatah',

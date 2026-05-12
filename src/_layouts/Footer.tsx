@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-2 text-[10px] font-bold text-gray-400 uppercase tracking-wider">
-              <span className="px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400/80 font-mono">
+              <span className="px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400/80 font-mono">
                 V{VERSION}
               </span>
               <span className="opacity-30">|</span>
@@ -32,16 +32,16 @@ const Footer: React.FC = () => {
           {/* KOLOM TENGAH: Support & Links */}
           <div className="flex flex-col items-center justify-center space-y-4">
             <div className="flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-gray-500 dark:text-gray-400">
-              <a href={APP.nxctf.nxctf_github} className="hover:text-blue-500 transition-colors">Repo</a>
-              <a href={APP.nxctf.nxctf_docs} className="hover:text-blue-500 transition-colors">Docs</a>
-              <a href={APP.links.discord} className="hover:text-blue-500 transition-colors">Discord</a>
+              <a href={APP.nxctf.nxctf_github} className="hover:text-orange-500 transition-colors">Repo</a>
+              <a href={APP.nxctf.nxctf_docs} className="hover:text-orange-500 transition-colors">Docs</a>
+              <a href={APP.links.discord} className="hover:text-orange-500 transition-colors">Discord</a>
             </div>
 
             <a
               href={APP.nxctf.nxctf_donation}
               target="_blank"
               rel="noopener"
-              className="flex items-center gap-2 px-3 py-2 bg-blue-600/5 dark:bg-blue-400/5 border border-blue-500/20 hover:border-orange-500/50 hover:bg-orange-500/5 text-blue-600 dark:text-blue-400 hover:text-orange-600 dark:hover:text-orange-400 rounded-full transition-all duration-300 group shadow-sm"
+              className="flex items-center gap-2 px-3 py-2 bg-orange-600/5 dark:bg-orange-400/5 border border-orange-500/20 hover:border-orange-500/50 hover:bg-orange-500/5 text-orange-600 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-400 rounded-full transition-all duration-300 group shadow-sm"
             >
               <Coffee size={14} className="animate-bounce text-orange-500" />
               <span className="text-[11px] font-bold uppercase tracking-wider">Support Dev</span>
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex flex-col items-start leading-none">
                 <span className="text-[9px] font-bold text-gray-400 uppercase tracking-tighter">Org</span>
-                <span className="text-xs font-black text-gray-900 dark:text-white group-hover:text-blue-500 transition-colors">{APP.nxctf.nxctf_title}</span>
+                <span className="text-xs font-black text-gray-900 dark:text-white group-hover:text-orange-500 transition-colors">{APP.nxctf.nxctf_title}</span>
               </div>
             </a>
 

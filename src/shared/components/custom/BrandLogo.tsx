@@ -10,26 +10,23 @@ interface BrandLogoProps {
 
 // Langsung export default di depan function
 export default ({ name = "", className }: BrandLogoProps) => {
-    const isCtfBrand = name.toUpperCase().endsWith("CTF");
+    const isPhoenix = name.toUpperCase().includes("PHOENIX");
 
-    if (isCtfBrand) {
-        const prefix = name.substring(0, name.length - 3);
-        const suffix = name.substring(name.length - 3);
-
+    if (isPhoenix) {
         return (
-            <span className={cn("font-black tracking-tighter", className)}>
+            <span className={cn("font-black tracking-tighter uppercase", className)}>
                 <span className="text-gray-900 dark:text-white transition-colors">
-                    {prefix}
+                    PHOENIX
                 </span>
-                <span className="text-blue-600 dark:text-blue-500 drop-shadow-[0_0_10px_rgba(59,130,246,0.3)]">
-                    {suffix}
+                <span className="text-orange-600 dark:text-orange-500 drop-shadow-[0_0_15px_rgba(249,115,22,0.5)] ml-1">
+                    ARENA
                 </span>
             </span>
         );
     }
 
     return (
-        <span className={cn("text-blue-600 dark:text-blue-500 font-black tracking-tighter", className)}>
+        <span className={cn("text-orange-600 dark:text-orange-500 font-black tracking-tighter uppercase", className)}>
             {name}
         </span>
     );

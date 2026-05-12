@@ -41,7 +41,7 @@ export default function RegisterForm() {
     <AuthCard>
       <AuthHeader
         badge="Create Account"
-        title="Join NXCTF"
+        title="Join Phoenix Arena"
         subtitle="Start solving challenges today"
       />
 

@@ -1,10 +1,10 @@
-import { LINKS, YEAR, DIFFICULTY_STYLES, NXCTF } from './const'
+import { LINKS, YEAR, DIFFICULTY_STYLES, PHOENIX_ARENA } from './const'
 
 export const APP = {
-  shortName: "NXCTF",
-  fullName: "NXCTF",
-  description: "Aplikasi CTF minimalis dengan Next.js dan Supabase",
-  flagFormat: "NXCTF{your_flag_here}",
+  shortName: "PHOENIX",
+  fullName: "Phoenix Arena",
+  description: "Modern Cyber Security Arena with Next.js and Supabase",
+  flagFormat: "PHOENIX{your_flag_here}",
 
   challengeCategories: [
     "Intro",
@@ -59,7 +59,7 @@ export const APP = {
   },
   difficultyStyles: DIFFICULTY_STYLES,
   year: YEAR,
-  nxctf: NXCTF
+  nxctf: PHOENIX_ARENA
 }
 
 export default APP
