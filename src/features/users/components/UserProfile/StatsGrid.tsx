@@ -44,6 +44,8 @@ export default function StatsGrid({
         icon={Droplet}
         label="First Bloods"
         value={firstBloodCount}
+        className={firstBloodCount > 0 ? "hover:border-red-500/50 hover:shadow-[0_10px_20px_rgba(239,68,68,0.1)]" : ""}
+        iconClassName={firstBloodCount > 0 ? "bg-red-500/10 text-red-500 ring-red-500/20 dark:text-red-400" : ""}
       />
       {showTeam && teamInfo ? (
         <UserStat

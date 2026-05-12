@@ -9,9 +9,10 @@ type UserStatProps = {
   detail?: React.ReactNode
   onClick?: () => void
   className?: string
+  iconClassName?: string
 }
 
-export function UserStat({ icon: Icon, label, value, detail, onClick, className }: UserStatProps) {
+export function UserStat({ icon: Icon, label, value, detail, onClick, className, iconClassName }: UserStatProps) {
   const Component = onClick ? 'button' : 'div'
 
   return (
@@ -24,7 +25,10 @@ export function UserStat({ icon: Icon, label, value, detail, onClick, className 
         className
       )}
     >
-      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-blue-500/10 text-blue-500 ring-1 ring-blue-500/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 dark:text-blue-400">
+      <div className={cn(
+        "flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-blue-500/10 text-blue-500 ring-1 ring-blue-500/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 dark:text-blue-400",
+        iconClassName
+      )}>
         <Icon className="h-5 w-5" />
       </div>
       <div className="min-w-0">
