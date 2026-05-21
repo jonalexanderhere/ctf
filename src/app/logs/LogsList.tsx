@@ -20,7 +20,7 @@ export type LogEntry = {
   log_created_at: string;
 };
 
-export default function LogsList({ tabType = 'challenges', eventId }: { tabType?: 'challenges' | 'solves', eventId?: string | null | 'all' }) {
+export default function LogsList({ tabType = 'challenges', eventId }: { tabType?: 'challenges' | 'firstblood' | 'solves', eventId?: string | null | 'all' }) {
   const [notifications, setNotifications] = useState<LogEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const { getFeed } = useLogs()
@@ -40,8 +40,13 @@ export default function LogsList({ tabType = 'challenges', eventId }: { tabType?
 
   // Filter based on tab type
   const challengeLogs = notifications.filter(n => n.log_type === 'first_blood' || n.log_type === 'new_challenge');
+  const firstBloodLogs = notifications.filter(n => n.log_type === 'first_blood');
   const solveLogs = notifications.filter(n => n.log_type === 'solve');
-  const filteredNotifications = tabType === 'solves' ? solveLogs : challengeLogs;
+  const filteredNotifications = tabType === 'solves'
+    ? solveLogs
+    : tabType === 'firstblood'
+      ? firstBloodLogs
+      : challengeLogs;
 
   if (loading && notifications.length === 0) return <Loader fullscreen color="text-orange-500" />;
 

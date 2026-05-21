@@ -3,7 +3,7 @@
 // React Imports
 import { Suspense, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Flag, Logs } from "lucide-react";
+import { Droplet, Flag, Logs } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 // Shared Imports
@@ -18,7 +18,7 @@ export default function LogsPage() {
   const router = useRouter();
   const { user, loading: authLoading } = useAuth();
   const { markAllRead, refresh, unreadCount: challengeUnread } = useLogs()
-  const [tabType, setTabType] = useState<'challenges' | 'solves'>('solves')
+  const [tabType, setTabType] = useState<'challenges' | 'firstblood' | 'solves'>('solves')
   const { startedEvents, selectedEvent, setSelectedEvent } = useEventContext()
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function LogsPage() {
     if (!authLoading && user) {
       refresh()
     }
-  }, [authLoading, user, router]);
+  }, [authLoading, user, router, refresh]);
 
   // Events are loaded globally via EventProvider
 
@@ -86,6 +86,23 @@ export default function LogsPage() {
                     {challengeUnread > 99 ? '99+' : challengeUnread}
                   </span>
                 )}
+              </span>
+            </button>
+            <button
+              onClick={() => setTabType('firstblood')}
+              className={`px-4 py-2 text-sm font-medium transition border-b-2 ${tabType === 'firstblood'
+                ? 'border-rose-500 text-rose-600 dark:text-rose-400'
+                : 'border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
+                }`}
+            >
+              <span
+                className="flex items-center gap-1 max-w-[90px] md:max-w-none overflow-hidden"
+                title="First Blood Logs"
+              >
+                <Droplet size={16} className="shrink-0" />
+                <span className="truncate whitespace-nowrap block">
+                  First Blood
+                </span>
               </span>
             </button>
             <button
